@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-
+import styled, { createGlobalStyle } from "styled-components";
+import { Modal } from "../containers/ListaDeContatos/style";
 const EstiloGlobal = createGlobalStyle`
     *{  
         margin: 0;
@@ -15,5 +15,10 @@ const EstiloGlobal = createGlobalStyle`
             font-size: 15px;
         }
     }
+`
+export const ContainerGlobal = styled.div<Modal>`
+    width: 100vw;
+    height: 100vh;
+    background-color: ${({ ativo }) => ativo ? 'rgba(0,0,0,0.4)' : 'none'};
 `
 export default EstiloGlobal

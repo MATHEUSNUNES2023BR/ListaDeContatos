@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
-
-export const ContainerContato = styled.div`
+export type Modal = {
+    ativo: boolean;
+}
+export const ContainerContato = styled.div<Modal>`
     margin-top: 20px;
     height: 81vh;
     overflow-y: scroll;
@@ -9,4 +11,6 @@ export const ContainerContato = styled.div`
     @media (max-width: 700px){
         padding: 8px;
     }
+    position: relative;
+    z-index: ${({ ativo }) => ativo ? -1 : 1};
 `

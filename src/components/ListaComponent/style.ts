@@ -146,6 +146,7 @@ export const ListaButtonEditar = styled.button`
         width: 65px;
         font-size: 0.75rem;
     }
+    
 `
 export const ListaButtonRemover = styled(ListaButtonEditar)`
     background-color:#EB1414;

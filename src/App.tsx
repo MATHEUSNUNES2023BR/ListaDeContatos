@@ -1,6 +1,13 @@
+import { BarraEdicao } from "./containers/BarraDeEdicao"
+import EstiloGlobal from "./styles/Estilo_Global"
+
 function App() {
-  return (<h1>Ola</h1>)
-  
+  return (
+    <>
+      <EstiloGlobal />
+      <BarraEdicao />
+    </>
+  )
 }
 
 export default App

@@ -12,6 +12,9 @@ export const BarraIcon = styled.div`
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bolder;
         color: #1F2937;
+        @media (max-width: 576px){
+            margin: 8px;
+        }
     }
 `
 export const BarraSearch = styled.input`
@@ -26,6 +29,12 @@ export const BarraSearch = styled.input`
         border-color: #3B82F6; 
         outline: none; 
     }
+    @media(max-width: 1080px){
+        width: 100%;
+    }
+    @media (max-width: 576px){
+        width: 80%;
+    }
 `
 export const BarraAdd = styled.button`
     font-size: 1rem;
@@ -35,4 +44,10 @@ export const BarraAdd = styled.button`
     background-color: #3B82F6;
     border-radius: 15px;
     cursor: pointer;
+    @media(max-width: 576px){
+        display: grid;
+        margin-left: auto;
+        margin-right: 20px;
+        grid-column: 2 / -1;
+    }
 `

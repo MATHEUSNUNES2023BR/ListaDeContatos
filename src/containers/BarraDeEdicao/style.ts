@@ -9,4 +9,10 @@ export const BarraContainer = styled.div`
     align-items: center;
     border-bottom: 1px solid #F3F4F6;
     background-color: #F3F4F6;
+    @media (max-width: 700px){
+        grid-template-columns: 1.5fr 1.5fr 0.8fr;
+    }
+    @media (max-width: 576px){
+        grid-template-columns: 0.8fr 1.5fr;
+    }
 `

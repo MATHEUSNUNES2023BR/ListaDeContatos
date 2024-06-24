@@ -32,7 +32,7 @@ export const ModalContato = ()=>{
             <ModalButtonContainer>
                 <ModalButtonSalvar onClick={()=>
                    ( 
-                    dispatch(adicionar({name:modalNome, email: modalEmail, contato: modalContato, id:tamanhoContatos.length})),
+                    dispatch(adicionar({name:modalNome, email: modalEmail, contato: modalContato, id:tamanhoContatos.length+1})),
                     dispatch(ativarModal()),
                     limpaInput()
                     )

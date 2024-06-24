@@ -56,6 +56,7 @@ export const ModalButtonSalvar = styled.button`
     font-size: 1.8rem;
     background-color: #22C55E;
     color: white;
+    border: none;
     border-radius: 10px;
     padding: 8px;
     cursor: pointer;

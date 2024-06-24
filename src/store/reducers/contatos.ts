@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type contatos = {
+export type contatos = {
     name: string,
     contato: string,
     email: string,
@@ -48,9 +48,11 @@ const contatoReducer = createSlice({
                 state[indexDoContato] = action.payload
             }
 
+        },
+        adicionar: (state, action: PayloadAction<contatos>) => {
+            state.push(action.payload)
         }
     }
 })
-export const { remover } = contatoReducer.actions
-export const { edicao } = contatoReducer.actions
+export const { remover, edicao, adicionar } = contatoReducer.actions
 export default contatoReducer.reducer

@@ -1,27 +1,51 @@
-import { ContainerButtons, ListaButtonEditar, ListaButtonRemover, ListaContainer, ListaEmail, ListaFoto, ListaNome, ListaTelefone } from "./style"
+import { ContainerButtons, ListaButtonCancelar, ListaButtonEditar, ListaButtonRemover, ListaButtonSalvar, ListaContainer, ListaEmail, ListaFoto, ListaNome, ListaTelefone } from "./style"
 import avatar from '../../assets/avatar-default-svgrepo-com.svg'
-import nome from '../../assets/avatar-people-person-svgrepo-com.svg'
-import email from '../../assets/email-svgrepo-com.svg'
-import contato from '../../assets/contact-book-svgrepo-com.svg'
-export const ListaCoponent = () => {
+import iconnome from '../../assets/avatar-people-person-svgrepo-com.svg'
+import iconemail from '../../assets/email-svgrepo-com.svg'
+import iconcontato from '../../assets/contact-book-svgrepo-com.svg'
+import { useState } from "react"
+import { remover } from "../../store/reducers/contatos"
+import { useDispatch } from "react-redux"
+type contatos = {
+    name: string,
+    email: string,
+    contato: string,
+    id: number
+}
+export const ListaComponent = ({name, contato, email, id}:contatos) => {
+    const dispatch = useDispatch()
+    const [editar, setEditar] = useState(false)
     return(
         <ListaContainer>
             <ListaFoto src={avatar}/>
             <ListaNome >
-                <img className='iconimg' src={nome} alt="" />
-                <input type="text" value={'Matheus Nunes'}/>
+                <img className='iconimg' src={iconnome} alt="Icone Avatar" />
+                <input type="text" value={name}/>
             </ListaNome>
             <ListaEmail>
-                <img className='iconimg' src={email} alt="" />
-                <input type="text" value={'matheusnunesdebarros@gmail.com'}/>
+                <img className='iconimg' src={iconemail} alt="Icone Email" />
+                <input type="email" value={email}/>
             </ListaEmail>
             <ListaTelefone>
-                <img className='iconimg' src={contato} alt="" />
-                <input type="text"  value={'62 9 819636308'}/>
+                <img className='iconimg' src={iconcontato} alt="Icone Contato" />
+                <input type="text" value={contato}/>
             </ListaTelefone>
             <ContainerButtons>
-                <ListaButtonEditar>Editar</ListaButtonEditar>
-                <ListaButtonRemover>Remover</ListaButtonRemover>
+                {editar ? 
+                    (
+                    <>
+                        <ListaButtonSalvar>Salvar</ListaButtonSalvar>
+                        <ListaButtonCancelar onClick={()=>{setEditar(false)}}>Cancelar</ListaButtonCancelar>
+                    </>
+                    )
+                    :
+                    (
+                    <>
+                        <ListaButtonEditar onClick={()=>{setEditar(true)}}>Editar</ListaButtonEditar>
+                        <ListaButtonRemover onClick={()=>{dispatch(remover(id))}}>Remover</ListaButtonRemover>   
+                    </>
+                    )
+                }
             </ContainerButtons>
         </ListaContainer>
     )

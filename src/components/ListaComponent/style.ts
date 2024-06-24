@@ -151,3 +151,9 @@ export const ListaButtonEditar = styled.button`
 export const ListaButtonRemover = styled(ListaButtonEditar)`
     background-color:#EB1414;
 `
+export const ListaButtonSalvar= styled(ListaButtonEditar)`
+    background-color: #22C55E;
+`
+export const ListaButtonCancelar= styled(ListaButtonEditar)`
+    background-color: #1F2937;
+`

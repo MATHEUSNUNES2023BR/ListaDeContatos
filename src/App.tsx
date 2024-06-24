@@ -7,7 +7,6 @@ import { RootReducer } from "./store"
 
 function App() {
   const estadoModal = useSelector((state: RootReducer) => state.modalReducer)
-  console.log(estadoModal.ativo)
   return (
     <ContainerGlobal ativo={estadoModal.ativo}>
       <EstiloGlobal />

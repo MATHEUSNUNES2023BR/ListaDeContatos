@@ -39,8 +39,18 @@ const contatoReducer = createSlice({
         remover: (state, action: PayloadAction<number>) => {
             state = state.filter((state) => state.id !== action.payload)
             return state
+        },
+        edicao: (state, action: PayloadAction<contatos>)=>{
+            const indexDoContato = state.findIndex(
+                (c) => c.id == action.payload.id
+            )
+            if(indexDoContato >= 0){
+                state[indexDoContato] = action.payload
+            }
+
         }
     }
 })
 export const { remover } = contatoReducer.actions
+export const { edicao } = contatoReducer.actions
 export default contatoReducer.reducer

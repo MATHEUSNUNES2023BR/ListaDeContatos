@@ -9,7 +9,7 @@ export type contatos = {
 const initialState:contatos[] = [
     { 
         name: 'Matheus',
-        contato: '62 9 81963308',
+        contato: '62 9 81965548',
         email: 'matheusnunes@gmail.com',
         id: 1
     },
@@ -30,6 +30,12 @@ const initialState:contatos[] = [
         contato: '62 9 95484422',
         email: 'pedro1998@gmail.com',
         id: 4
+    },
+    { 
+        name: 'Renan',
+        contato: '62 9 88553314',
+        email: 'renansouza@gmail.com',
+        id: 5
     },
 ]
 const contatoReducer = createSlice({

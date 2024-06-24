@@ -6,10 +6,14 @@ import { RootReducer } from "../../store";
 
 export const ListaDeContatos = ({ ativo }:Modal) => {
     const listaDeContatos = useSelector((state: RootReducer) => state.contatos)
+    const termo = useSelector((state: RootReducer)=>state.filtro)
+    const filtrarConatos = () => {
+        return (listaDeContatos.filter((item) => item.name.toLowerCase().search(termo.termo.toLowerCase()) >= 0))
+    }
     return(
         <ContainerContato ativo={ativo}>
             {
-                listaDeContatos.map((contato)=>(
+                filtrarConatos().map((contato)=>(
                     <div key={contato.id}>
                         <ListaComponent 
                             name={contato.name} 
